@@ -19,7 +19,7 @@
 
 ## Context and background
 
-To better serve our smaller clients, they can pay via Credit Cards. The credit card information will be stored in our systems, so that they can be billed at the appropriate intervals (monthly/annually). The Tenant Admin will add their Credit Card information in via the UI and the UI will pass down the information to the API, which will find its way to the database. We are only focusing our efforts on the API piece, another team is working on the UI.
+To better serve our smaller clients, they can pay via Credit Cards. The credit card information will be stored in our systems, so that they can be billed at the appropriate intervals (monthly/annually). The Workspace Owner will add their Credit Card information in via the UI and the UI will pass down the information to the API, which will find its way to the database. We are only focusing our efforts on the API piece, another team is working on the UI.
 
 Before updating the credit card on file, we want to make sure that the credit card is valid. The system will make an API call to VISA and verify it is authentic and usable.
 
@@ -46,7 +46,7 @@ The architecture of the system is very simple and straightforward. There are fiv
 
 Gateway API has two sets of responsibilities:
 
-- Enforce rate limit of 100 calls/minute per Tenant Admin
+- Enforce rate limit of 100 calls/minute per Workspace Owner
 - Forward the appropriate requests to the Billing Service
 
 If the Gateway API sees more than 100 calls/minute/user, it will send the user a 429 (Too Many Requests).
@@ -161,9 +161,10 @@ _Names of the folks in your group_
 ### Diagram
 
 ![Payments Architecture](payments.architecture.numbered.png)
+
 The diagram has numbers, which are different areas that you can look for threats.
 
-1. Are there concerns between a Tenant Admin and the Gateway API?
+1. Are there concerns between a Workspace Owner and the Gateway API?
 2. Are there any threats between Gateway API and the Billing Service?
 3. Do you have concerns between Billing Service and the database?
 4. What are the concerns with the Billing Database?
@@ -215,7 +216,7 @@ _Security controls have been highlighted in green below, feel free to add your t
 
 #### Denial of Service
 
-- _Gateway API has a rate limiter in place to ensure that a tenant admin cannot exceed 100/min_
+- _Gateway API has a rate limiter in place to ensure that a Workspace Owner cannot exceed 100/min_
 - Example bad thing that might happen
 
 #### Elevation of Privilege

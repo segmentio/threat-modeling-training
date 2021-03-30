@@ -15,3 +15,9 @@ The goal of the second training is to get the developer’s hands dirty with exe
 ### Live Threat Modeling
 
 The goal of the final training is to perform an end-to-end threat modeling session with the team to cement the concepts that we have previously discussed.
+
+### Feedback
+
+We have a strong sense of community here at Segment and in addition to sharing our training slides, we have an email address so you can submit your questions and thoughts about the program. We are always interested in hearing feedback, good or bad!
+
+Email address: sstm@segment.com 

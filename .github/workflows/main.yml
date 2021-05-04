@@ -1,0 +1,30 @@
+name: pdf-generation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: create exercise PDF
+        run: |
+          sudo apt-get install -y pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra
+          cd '01 - Payments Exercise/'
+          pandoc README.md -o '../payment-exercise.pdf'
+          cd ..
+      - name: setup git config
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: commit and push
+        run: |
+          # Stage the file, commit and push
+          git add payment-exercise.pdf
+          git commit -m "new exercise commit"
+          git push     

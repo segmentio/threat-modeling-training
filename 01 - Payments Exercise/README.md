@@ -145,17 +145,27 @@ _Names of the folks in your group_
 - Name #1
 - Name #2
 - Name #etc
+Your names:
+```
 
+
+
+
+
+
+
+
+
+
+```
 ### Goal
 
 - Find as many threats as possible, but report back your top three risks
 
 ### How?
 
-- What are the assets in this feature?
-- What do you want to protect?
-- Are there areas of the system that a bad actor wants access to or go after?
-- What is important to them? How can they take advantage?
+- Where are trust boundaries?
+- What is important to the entities around the boundaries? How can a threat agent take advantage?
 - Review the diagram and use STRIDE to discover threats/concerns/risks
 
 ### Diagram
@@ -183,12 +193,6 @@ Which assumptions did you make?
 - VISA means any payment processor, not just VISA
 - _Add your own assumptions here_
 
-### Assets
-
-- Asset #1
-- Asset #2
-- Asset #etc
-
 ### Threats
 
 _Security controls have been highlighted in green below, feel free to add your threats to the list below and shade them red._
@@ -199,36 +203,140 @@ _Security controls have been highlighted in green below, feel free to add your t
 - _Billing Service uses a token stored in a secrets store to connect with VISA_
 - Example bad thing that might happen
 
+Your threats:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Tampering
 
 - _Billing Service has very strong input validation controls, it would be nearly impossible to tamper with the individual fields (Credit Card Number, Expiry, etc) to get a Stored XSS or SQL injection vulnerability_
 - Example bad thing that might happen
 
+Your threats:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Repudiation
 
 - _We are logging information of who updated the Payment Information, when they updated it in the Billing Logs_
 - Example bad thing that might happen
 
+Your threats:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Information Disclosure
 
 - _Billing Database’s disk is encrypted at rest to protect against AWS employees stealing hard drives_
 - Example bad thing that might happen
 
+Your threats:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Denial of Service
 
 - _Gateway API has a rate limiter in place to ensure that a Workspace Owner cannot exceed 100/min_
 - Example bad thing that might happen
 
-#### Elevation of Privilege
+Your threats:
+```
 
+
+
+
+
+
+
+
+
+
+```
+#### Elevation of Privilege
 - Example bad thing that might happen
 
+Your threats:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Other Security questions/thoughts?
 
 - This is a bad thing that might happen, but it doesn’t really fall into STRIDE
 
+Your questions/thoughts:
+```
+
+
+
+
+
+
+
+
+
+
+```
 #### Top 3 Risks
 
 - Risk#1
 - Risk#2
 - Risk#3
+
+Your top 3 risks:
+```
+
+
+
+
+
+
+
+
+
+
+```
